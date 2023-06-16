@@ -3,13 +3,19 @@ import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import Heart3LineIcon from "remixicon-react/Heart3LineIcon";
 
 interface Props {
-  result: {};
+  result: {
+    overview: string;
+    title: string;
+    poster_path: string;
+    release_date: string;
+    vote_average: number;
+  };
   index: number;
   selectedIndex: number;
   onIndex: (i: number) => void;
 }
 const movieCard = ({ result, index, selectedIndex, onIndex }: Props) => {
-  const handleOnClick = (e) => {
+  const handleOnClick = () => {
     onIndex(index);
   };
 

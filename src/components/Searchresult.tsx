@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 
 interface Props {
-  results: [];
+  results: any[];
   changeIndex: (num: number) => void;
   selectedIndex: number;
 }
 
-const Searchresult = ({ results = [], changeIndex, selectedIndex }: Props) => {
+const Searchresult = ({ results, changeIndex, selectedIndex }: Props) => {
   const handleSelectedIndex = (i: number) => {
     changeIndex(i);
   };
