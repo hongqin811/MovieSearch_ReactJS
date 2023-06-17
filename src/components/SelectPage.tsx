@@ -16,7 +16,9 @@ const SelectPage = ({ page, onPage, totalPage }: Props) => {
           href="#"
           className="btn btn-primary fs-5"
           onClick={() =>
-            onPage((page - 1) % totalPage == 0 ? 82 : (page - 1) % totalPage)
+            onPage(
+              (page - 1) % totalPage == 0 ? totalPage : (page - 1) % totalPage
+            )
           }
         >
           previous
@@ -28,23 +30,27 @@ const SelectPage = ({ page, onPage, totalPage }: Props) => {
             onClick={() =>
               onPage(
                 (page - 2 + totalPage) % totalPage === 0
-                  ? 82
+                  ? totalPage
                   : (page - 2 + totalPage) % totalPage
               )
             }
           >
             {(page - 2 + totalPage) % totalPage === 0
-              ? 82
+              ? totalPage
               : (page - 2 + totalPage) % totalPage}
           </a>
           <a
             href="#"
             className="btn btn-primary fs-5 m-1"
             onClick={() =>
-              onPage((page - 1) % totalPage === 0 ? 82 : (page - 1) % totalPage)
+              onPage(
+                (page - 1) % totalPage === 0
+                  ? totalPage
+                  : (page - 1) % totalPage
+              )
             }
           >
-            {(page - 1) % totalPage === 0 ? 82 : (page - 1) % totalPage}
+            {(page - 1) % totalPage === 0 ? totalPage : (page - 1) % totalPage}
           </a>
 
           <a href="#" className="btn btn-info fs-5 m-1">
@@ -54,19 +60,27 @@ const SelectPage = ({ page, onPage, totalPage }: Props) => {
             href="#"
             className="btn btn-primary fs-5 m-1"
             onClick={() =>
-              onPage((page + 1) % totalPage === 0 ? 82 : (page + 1) % totalPage)
+              onPage(
+                (page + 1) % totalPage === 0
+                  ? totalPage
+                  : (page + 1) % totalPage
+              )
             }
           >
-            {(page + 1) % totalPage === 0 ? 82 : (page + 1) % totalPage}
+            {(page + 1) % totalPage === 0 ? totalPage : (page + 1) % totalPage}
           </a>
           <a
             href="#"
             className="btn btn-primary fs-5 m-1"
             onClick={() =>
-              onPage((page + 2) % totalPage === 0 ? 82 : (page + 2) % totalPage)
+              onPage(
+                (page + 2) % totalPage === 0
+                  ? totalPage
+                  : (page + 2) % totalPage
+              )
             }
           >
-            {(page + 2) % totalPage === 0 ? 82 : (page + 2) % totalPage}
+            {(page + 2) % totalPage === 0 ? totalPage : (page + 2) % totalPage}
           </a>
           <h1 className="text-primary">...</h1>
           <a
@@ -82,7 +96,9 @@ const SelectPage = ({ page, onPage, totalPage }: Props) => {
           href="#"
           className="btn btn-primary fs-5"
           onClick={() =>
-            onPage((page + 1) % totalPage === 0 ? 82 : (page + 1) % totalPage)
+            onPage(
+              (page + 1) % totalPage === 0 ? totalPage : (page + 1) % totalPage
+            )
           }
         >
           next
