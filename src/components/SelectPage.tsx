@@ -18,9 +18,37 @@ const SelectPage = ({ page, onPage, totalPage }: Props) => {
         >
           previous
         </a>
-        <div className="d-flex justify-content-center">
+        {/* <div className="d-flex justify-content-center">
           <h5 className="text-light m-1">Page {page}</h5>
+        </div> */}
+        <div className="d-flex justify-content-center">
+          <a href="#" className="btn btn-info fs-5 m-1">
+            {page}
+          </a>
+          <a
+            href="#"
+            className="btn btn-primary fs-5 m-1"
+            onClick={() => onPage((page + 1) % totalPage)}
+          >
+            {(page + 1) % totalPage}
+          </a>
+          <a
+            href="#"
+            className="btn btn-primary fs-5 m-1"
+            onClick={() => onPage((page + 1) % totalPage)}
+          >
+            {(page + 2) % totalPage}
+          </a>
+          <h1 className="text-primary">...</h1>
+          <a
+            href="#"
+            className="btn btn-primary fs-5 m-1"
+            onClick={() => onPage(totalPage)}
+          >
+            {totalPage}
+          </a>
         </div>
+
         <a
           href="#"
           className="btn btn-primary fs-5"
